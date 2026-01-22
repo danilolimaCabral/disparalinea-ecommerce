@@ -1,0 +1,49 @@
+# Railway ignore file - arquivos que não devem ser enviados ao Railway
+
+# Development
+.env.local
+.env.development
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+*.test.ts
+*.test.tsx
+*.spec.ts
+*.spec.tsx
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts (serão reconstruídos no Railway)
+node_modules/
+dist/
+build/
+.next/
+out/
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
+docs/
+*.md
+
+# Manus specific
+.manus-logs/
+screenshots/

@@ -276,3 +276,13 @@
 - [ ] Verificar responsividade em mobile
 - [ ] Testar formulário de newsletter
 - [ ] Testar formulário de contato
+
+## Preparação para Deploy no Railway
+
+- [x] Criar arquivo railway.json com configurações de build
+- [x] Criar Procfile para definir comando de start
+- [x] Ajustar package.json com scripts de produção
+- [x] Criar arquivo .railwayignore
+- [x] Documentar variáveis de ambiente necessárias
+- [x] Criar guia completo de deploy no Railway (RAILWAY_DEPLOY.md)
+- [x] Testar configurações de build localmente
