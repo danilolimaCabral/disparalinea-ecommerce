@@ -396,3 +396,12 @@
 - [ ] Opção B: Atualizar código para usar slugs em português
 - [ ] Validar TODOS os 36 produtos após correção
 - [ ] Implementar testes automatizados para validação de slugs
+
+
+## 🚨 CORREÇÃO URGENTE: Slugs Inconsistentes
+
+- [x] Criar script para regenerar slugs em inglês baseados em nameEn
+- [x] Executar script no banco de dados (10 produtos atualizados, 26 inalterados)
+- [x] Validar produtos problemáticos (AirPods Pro e Dior Sauvage) - FUNCIONANDO
+- [x] Testar amostra adicional de produtos
+- [x] Verificar funcionalidade de busca com novos slugs - 2 produtos Dior encontrados
