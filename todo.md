@@ -148,3 +148,13 @@
 - [x] Adicionar produtos de perfumes (Dior, Chanel, Versace, Paco Rabanne, Hugo Boss)
 - [x] Popular banco de dados com imagens e informações dos produtos
 - [x] Verificar funcionamento das páginas de categoria Tires e Fragrances
+
+## Ajustes de Layout para Igualar ao Site de Referência
+- [x] Analisar site de referência e identificar todas as diferenças de layout
+- [x] Ajustar hero section (tamanho, espaçamento, posição da imagem)
+- [x] Corrigir seção Trusted Brands (tamanho dos logos, espaçamento)
+- [x] Ajustar grid de produtos (espaçamento, tamanho dos cards)
+- [x] Corrigir espaçamentos entre seções
+- [x] Ajustar tipografia (tamanhos de fonte, pesos, hierarquia)
+- [x] Verificar e corrigir footer
+- [x] Ajustar cores e contrastes se necessário
