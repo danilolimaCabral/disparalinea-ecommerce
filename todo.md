@@ -142,3 +142,9 @@
 ## Ajuste da Navegação
 - [x] Mover navegação para a mesma linha do header
 - [x] Integrar logo, navegação e ícones em uma única linha horizontal
+
+## Adicionar Produtos de Pneus e Perfumes
+- [x] Adicionar produtos de pneus (Michelin, Bridgestone, Pirelli, Continental, Goodyear)
+- [x] Adicionar produtos de perfumes (Dior, Chanel, Versace, Paco Rabanne, Hugo Boss)
+- [x] Popular banco de dados com imagens e informações dos produtos
+- [x] Verificar funcionamento das páginas de categoria Tires e Fragrances
