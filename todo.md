@@ -138,3 +138,7 @@
 ## Ajuste do Campo de Busca
 - [x] Ajustar estilo do campo de busca para ficar igual ao site de referência
 - [x] Verificar bordas, cantos, tamanho e espaçamento
+
+## Ajuste da Navegação
+- [x] Mover navegação para a mesma linha do header
+- [x] Integrar logo, navegação e ícones em uma única linha horizontal

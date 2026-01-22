@@ -77,33 +77,56 @@ export function Header({
   return (
     <header className="bg-background border-b border-border sticky top-0 z-50 shadow-sm">
       <div className="container">
-        {/* Main Header - Single Line */}
-        <div className="flex items-center justify-between py-5 gap-6">
+        {/* Main Header - Single Line with Navigation */}
+        <div className="flex items-center justify-between py-4 gap-4">
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center cursor-pointer flex-shrink-0">
               <img 
                 src="/logo-disparalinea.png" 
                 alt="DISPARALINEA TRADING LDA" 
-                className="h-16 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </div>
           </Link>
 
-          {/* Spacer */}
-          <div className="flex-1" />
+          {/* Navigation - Desktop */}
+          <nav className="hidden lg:flex items-center gap-1 flex-1">
+            <Link href="/">
+              <Button variant="ghost" size="sm" className="text-sm">
+                {t.home}
+              </Button>
+            </Link>
+            {categories.map((category) => (
+              <Link key={category.path} href={category.path}>
+                <Button variant="ghost" size="sm" className="text-sm">
+                  {category.name}
+                </Button>
+              </Link>
+            ))}
+            <Link href="/about">
+              <Button variant="ghost" size="sm" className="text-sm">
+                {t.about}
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button variant="ghost" size="sm" className="text-sm">
+                {t.contact}
+              </Button>
+            </Link>
+          </nav>
 
           {/* Actions - Right Side */}
-          <div className="flex items-center gap-3 flex-shrink-0">
+          <div className="flex items-center gap-2 flex-shrink-0">
             {/* Search Icon */}
-            <Button variant="ghost" size="icon" className="hidden sm:flex h-10 w-10 rounded-full hover:bg-accent">
-              <Search className="h-5 w-5" />
+            <Button variant="ghost" size="icon" className="hidden sm:flex h-9 w-9 rounded-full hover:bg-accent">
+              <Search className="h-4 w-4" />
             </Button>
             {/* Language Selector */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="hidden sm:flex h-10 w-10 rounded-full hover:bg-accent">
-                  <Globe className="h-5 w-5" />
+                <Button variant="ghost" size="icon" className="hidden sm:flex h-9 w-9 rounded-full hover:bg-accent">
+                  <Globe className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end" className="w-48">
@@ -125,8 +148,8 @@ export function Header({
             {/* Login Button */}
             <Button 
               variant="outline" 
-              size="default"
-              className="hidden sm:flex h-10 px-6 rounded-full font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
+              size="sm"
+              className="hidden sm:flex h-9 px-4 rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
               onClick={() => window.location.href = '/api/oauth/login'}
             >
               {t.login}
@@ -134,12 +157,12 @@ export function Header({
 
             {/* Cart */}
             <Link href="/cart">
-              <Button variant="ghost" size="icon" className="relative h-10 w-10 rounded-full hover:bg-accent">
-                <ShoppingCart className="h-5 w-5" />
+              <Button variant="ghost" size="icon" className="relative h-9 w-9 rounded-full hover:bg-accent">
+                <ShoppingCart className="h-4 w-4" />
                 {cartItemCount > 0 && (
                   <Badge
                     variant="destructive"
-                    className="absolute -top-1 -right-1 h-6 w-6 flex items-center justify-center p-0 text-xs font-bold rounded-full"
+                    className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs font-bold rounded-full"
                   >
                     {cartItemCount}
                   </Badge>
@@ -151,43 +174,17 @@ export function Header({
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden h-10 w-10 rounded-full"
+              className="lg:hidden h-9 w-9 rounded-full"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? (
-                <X className="h-5 w-5" />
+                <X className="h-4 w-4" />
               ) : (
-                <Menu className="h-5 w-5" />
+                <Menu className="h-4 w-4" />
               )}
             </Button>
           </div>
         </div>
-
-        {/* Navigation - Desktop */}
-        <nav className="hidden md:flex items-center gap-1 pb-3 border-t border-border pt-3">
-          <Link href="/">
-            <Button variant="ghost" size="sm">
-              {t.home}
-            </Button>
-          </Link>
-          {categories.map((category) => (
-            <Link key={category.path} href={category.path}>
-              <Button variant="ghost" size="sm">
-                {category.name}
-              </Button>
-            </Link>
-          ))}
-          <Link href="/about">
-            <Button variant="ghost" size="sm">
-              {t.about}
-            </Button>
-          </Link>
-          <Link href="/contact">
-            <Button variant="ghost" size="sm">
-              {t.contact}
-            </Button>
-          </Link>
-        </nav>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
