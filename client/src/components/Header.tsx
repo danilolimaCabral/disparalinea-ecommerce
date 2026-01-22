@@ -85,7 +85,7 @@ export function Header({
             <img 
               src="/logo-disparalinea.png" 
               alt="DISPARALINEA TRADING LDA" 
-              className="h-16 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
           </div>
         </Link>

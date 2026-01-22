@@ -125,3 +125,7 @@
 - [ ] Melhorar hover states em todos os elementos interativos
 - [ ] Adicionar micro-interações nos botões e cards
 - [ ] Otimizar tipografia com hierarquia clara
+
+## Melhorias Visuais Solicitadas
+- [x] Aumentar tamanho da logo DisparaLinea no header
+- [x] Melhorar visualização do ticker de cotação das moedas (tamanho, espaçamento, legibilidade)

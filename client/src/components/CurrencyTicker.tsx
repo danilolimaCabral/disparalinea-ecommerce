@@ -36,27 +36,27 @@ export function CurrencyTicker() {
   const duplicatedPairs = [...pairs, ...pairs];
 
   return (
-    <div className="bg-primary text-primary-foreground overflow-hidden py-2">
-      <div className="ticker-animate flex gap-8 whitespace-nowrap">
+    <div className="bg-primary text-primary-foreground overflow-hidden py-3">
+      <div className="ticker-animate flex gap-12 whitespace-nowrap">
         {duplicatedPairs.map((pair, index) => (
           <div
             key={`${pair.pair}-${index}`}
-            className="flex items-center gap-2 text-sm font-medium"
+            className="flex items-center gap-3 text-base font-medium"
           >
-            <span className="font-semibold">{pair.pair}</span>
-            <span className="text-xs opacity-80">{pair.symbol}</span>
-            <span>{pair.rate.toFixed(4)}</span>
+            <span className="font-bold text-lg">{pair.pair}</span>
+            <span className="text-sm opacity-90">{pair.symbol}</span>
+            <span className="font-semibold text-lg">{pair.rate.toFixed(4)}</span>
             <span
-              className={`flex items-center gap-1 ${
+              className={`flex items-center gap-1.5 font-semibold ${
                 pair.change >= 0 ? "text-green-300" : "text-red-300"
               }`}
             >
               {pair.change >= 0 ? (
-                <TrendingUp className="h-3 w-3" />
+                <TrendingUp className="h-4 w-4" />
               ) : (
-                <TrendingDown className="h-3 w-3" />
+                <TrendingDown className="h-4 w-4" />
               )}
-              {Math.abs(pair.change).toFixed(2)}%
+              {pair.change >= 0 ? "+" : ""}{Math.abs(pair.change).toFixed(2)}%
             </span>
           </div>
         ))}
