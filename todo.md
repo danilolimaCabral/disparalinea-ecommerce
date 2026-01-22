@@ -70,3 +70,9 @@
 - [ ] Verificar cálculos de IVA
 - [ ] Testar ticker de câmbio
 - [ ] Verificar responsividade mobile
+
+## Imagens e Assets
+- [x] Adicionar imagens reais para todos os produtos
+- [x] Atualizar banco de dados com URLs de imagens de produtos
+- [x] Adicionar imagens de categorias
+- [x] Adicionar fotos de clientes nos depoimentos
