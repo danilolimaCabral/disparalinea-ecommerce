@@ -158,3 +158,9 @@
 - [x] Ajustar tipografia (tamanhos de fonte, pesos, hierarquia)
 - [x] Verificar e corrigir footer
 - [x] Ajustar cores e contrastes se necessário
+
+## Correções de Moedas e Imagens
+- [x] Corrigir ticker de moedas sobrepostas
+- [x] Ajustar layout do ticker para melhor visualização
+- [x] Remover fundo das imagens dos produtos
+- [x] Garantir imagens com fundo transparente ou branco limpo
