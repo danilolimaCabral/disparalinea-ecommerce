@@ -8,6 +8,7 @@ import { Separator } from "@/components/ui/separator";
 import { trpc } from "@/lib/trpc";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { ProductCard } from "@/components/ProductCard";
+import { ProductReviews } from "@/components/ProductReviews";
 import { toast } from "sonner";
 
 const translations = {
@@ -284,28 +285,10 @@ export default function ProductDetail() {
             </Button>
           </div>
         </div>
-
+        
         {/* Reviews Section */}
-        <Card className="mb-16">
-          <CardContent className="p-6">
-            <h2 className="text-2xl font-bold mb-4">{t.reviews}</h2>
-            <div className="flex items-center gap-2 mb-6">
-              <div className="flex">
-                {[1, 2, 3, 4, 5].map((star) => (
-                  <Star
-                    key={star}
-                    className="h-5 w-5 fill-yellow-400 text-yellow-400"
-                  />
-                ))}
-              </div>
-              <span className="text-sm text-muted-foreground">
-                5.0 (0 reviews)
-              </span>
-            </div>
-            <p className="text-muted-foreground">{t.noReviews}</p>
-          </CardContent>
-        </Card>
-
+        <ProductReviews productId={product.id} language={language} />
+        
         {/* Related Products */}
         {filteredRelatedProducts && filteredRelatedProducts.length > 0 && (
           <div>

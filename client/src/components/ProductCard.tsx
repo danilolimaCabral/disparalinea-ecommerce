@@ -57,7 +57,7 @@ export function ProductCard({
   const t = translations[language];
 
   return (
-    <Card className="group card-glass smooth-shadow smooth-shadow-hover overflow-hidden">
+    <Card className="group glass-card glass-hover overflow-hidden border-0 transition-all duration-300">
       <Link href={`/product/${slug}`}>
         <div className="relative aspect-square overflow-hidden bg-muted">
           {imageUrl ? (

@@ -168,3 +168,43 @@ export const orderItems = mysqlTable("orderItems", {
 
 export type OrderItem = typeof orderItems.$inferSelect;
 export type InsertOrderItem = typeof orderItems.$inferInsert;
+
+/**
+ * Product reviews table - stores customer reviews and ratings
+ */
+export const productReviews = mysqlTable("productReviews", {
+  id: int("id").autoincrement().primaryKey(),
+  productId: int("productId").notNull(),
+  userId: int("userId").notNull(),
+  
+  // Review content
+  rating: int("rating").notNull(), // 1-5 stars
+  title: varchar("title", { length: 255 }),
+  comment: text("comment").notNull(),
+  
+  // Review metadata
+  isVerifiedPurchase: boolean("isVerifiedPurchase").default(false),
+  helpfulCount: int("helpfulCount").default(0),
+  isApproved: boolean("isApproved").default(true),
+  
+  // Timestamps
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().notNull(),
+});
+
+export type ProductReview = typeof productReviews.$inferSelect;
+export type InsertProductReview = typeof productReviews.$inferInsert;
+
+/**
+ * Review images table - stores images uploaded with reviews
+ */
+export const reviewImages = mysqlTable("reviewImages", {
+  id: int("id").autoincrement().primaryKey(),
+  reviewId: int("reviewId").notNull(),
+  imageUrl: text("imageUrl").notNull(),
+  imageKey: varchar("imageKey", { length: 255 }).notNull(),
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type ReviewImage = typeof reviewImages.$inferSelect;
+export type InsertReviewImage = typeof reviewImages.$inferInsert;

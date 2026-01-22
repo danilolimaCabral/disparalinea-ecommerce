@@ -286,3 +286,38 @@
 - [x] Documentar variáveis de ambiente necessárias
 - [x] Criar guia completo de deploy no Railway (RAILWAY_DEPLOY.md)
 - [x] Testar configurações de build localmente
+
+## Modernização Visual com Glassmorphism
+
+- [x] Aplicar backdrop-blur e transparências nos cards de produtos
+- [x] Adicionar efeitos glassmorphism no header e footer
+- [x] Implementar gradientes modernos no hero section
+- [x] Adicionar animações suaves de fade-in e slide-up
+- [x] Melhorar sombras e profundidade visual
+- [x] Implementar hover effects elegantes
+- [x] Adicionar micro-interações nos botões
+
+## Geração de Imagens com IA
+
+- [ ] Gerar imagens profissionais para 36 produtos usando IA
+- [ ] Fazer upload das imagens para S3
+- [ ] Atualizar banco de dados com novas URLs
+- [ ] Verificar carregamento de todas as imagens
+
+## CI/CD Automático
+
+- [x] Criar workflow do GitHub Actions (.github/workflows/deploy.yml)
+- [x] Configurar testes automatizados no CI
+- [x] Configurar deploy automático no Railway
+- [x] Adicionar documentação completa (CI_CD_SETUP.md)
+
+## Sistema de Reviews
+
+- [x] Criar schema de reviews no banco de dados
+- [x] Implementar tRPC procedures para reviews (criar, listar, atualizar)
+- [x] Criar componente de exibição de reviews
+- [x] Criar formulário de adicionar review
+- [x] Adicionar sistema de estrelas (rating)
+- [x] Adicionar verificação de compra
+- [x] Adicionar botão "Helpful" para reviews
+- [x] Integrar reviews na página de detalhes do produto

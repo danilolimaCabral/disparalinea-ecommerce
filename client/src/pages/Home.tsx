@@ -167,10 +167,11 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-primary text-primary-foreground py-20 lg:py-32 relative overflow-hidden">
-        <div className="container">
+      <section className="gradient-primary text-primary-foreground py-20 lg:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 gradient-mesh opacity-50"></div>
+        <div className="container relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl animate-fade-in-up">
               <div className="inline-block bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-semibold mb-6">
                 {t.hero.badge}
               </div>
@@ -193,7 +194,7 @@ export default function Home() {
                 </Link>
               </div>
             </div>
-            <div className="hidden lg:flex justify-center items-center">
+            <div className="hidden lg:flex justify-center items-center animate-fade-in-up stagger-2">
               <img 
                 src="/hero-phone.png" 
                 alt="Premium Smartphone" 
@@ -239,7 +240,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {categories.map((category) => (
               <Link key={category.path} href={category.path}>
-                <Card className="hover:shadow-professional-lg transition-smooth cursor-pointer h-full">
+                <Card className="glass-card glass-hover cursor-pointer h-full border-0">
                   <CardContent className="p-6 text-center">
                     <category.icon className="h-12 w-12 mx-auto mb-4 text-primary" />
                     <h3 className="font-semibold mb-2">{category.name}</h3>

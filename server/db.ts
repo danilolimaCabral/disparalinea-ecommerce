@@ -1,6 +1,6 @@
 import { eq, like, and, gte, lte, inArray, sql, desc } from "drizzle-orm";
 import { drizzle } from "drizzle-orm/mysql2";
-import { InsertUser, users, products, categories, cartItems, newsletterSubscriptions, testimonials } from "../drizzle/schema";
+import { InsertUser, users, products, categories, cartItems, newsletterSubscriptions, testimonials, productReviews, reviewImages, orders, orderItems } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
 let _db: ReturnType<typeof drizzle> | null = null;
@@ -279,4 +279,130 @@ export async function getActiveTestimonials() {
   const db = await getDb();
   if (!db) return [];
   return await db.select().from(testimonials).where(eq(testimonials.isActive, true)).orderBy(desc(testimonials.createdAt));
+}
+
+// Product Reviews
+export async function getProductReviews(productId: number) {
+  const db = await getDb();
+  if (!db) return [];
+  
+  const reviews = await db
+    .select({
+      id: productReviews.id,
+      productId: productReviews.productId,
+      userId: productReviews.userId,
+      rating: productReviews.rating,
+      title: productReviews.title,
+      comment: productReviews.comment,
+      isVerifiedPurchase: productReviews.isVerifiedPurchase,
+      helpfulCount: productReviews.helpfulCount,
+      createdAt: productReviews.createdAt,
+      userName: users.name,
+      userEmail: users.email,
+    })
+    .from(productReviews)
+    .leftJoin(users, eq(productReviews.userId, users.id))
+    .where(and(
+      eq(productReviews.productId, productId),
+      eq(productReviews.isApproved, true)
+    ))
+    .orderBy(desc(productReviews.createdAt));
+  
+  // Get images for each review
+  const reviewsWithImages = await Promise.all(
+    reviews.map(async (review) => {
+      const images = await db
+        .select()
+        .from(reviewImages)
+        .where(eq(reviewImages.reviewId, review.id));
+      return { ...review, images };
+    })
+  );
+  
+  return reviewsWithImages;
+}
+
+export async function getProductRatingStats(productId: number) {
+  const db = await getDb();
+  if (!db) return { averageRating: 0, totalReviews: 0, ratingDistribution: {} };
+  
+  const reviews = await db
+    .select()
+    .from(productReviews)
+    .where(and(
+      eq(productReviews.productId, productId),
+      eq(productReviews.isApproved, true)
+    ));
+  
+  const totalReviews = reviews.length;
+  if (totalReviews === 0) {
+    return { averageRating: 0, totalReviews: 0, ratingDistribution: {} };
+  }
+  
+  const sumRatings = reviews.reduce((sum, review) => sum + review.rating, 0);
+  const averageRating = sumRatings / totalReviews;
+  
+  const ratingDistribution: Record<number, number> = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
+  reviews.forEach((review) => {
+    ratingDistribution[review.rating] = (ratingDistribution[review.rating] || 0) + 1;
+  });
+  
+  return { averageRating, totalReviews, ratingDistribution };
+}
+
+export async function createProductReview(data: {
+  productId: number;
+  userId: number;
+  rating: number;
+  title?: string;
+  comment: string;
+}) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  // Check if user has purchased this product
+  const hasPurchased = await db
+    .select()
+    .from(orders)
+    .innerJoin(orderItems, eq(orders.id, orderItems.orderId))
+    .where(and(
+      eq(orders.userId, data.userId),
+      eq(orderItems.productId, data.productId),
+      sql`${orders.status} = 'completed'`
+    ))
+    .limit(1);
+  
+  const isVerifiedPurchase = hasPurchased.length > 0;
+  
+  const [result] = await db.insert(productReviews).values({
+    ...data,
+    isVerifiedPurchase,
+  });
+  
+  return result.insertId;
+}
+
+export async function addReviewImages(reviewId: number, images: { imageUrl: string; imageKey: string }[]) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  if (images.length === 0) return;
+  
+  await db.insert(reviewImages).values(
+    images.map((img) => ({
+      reviewId,
+      imageUrl: img.imageUrl,
+      imageKey: img.imageKey,
+    }))
+  );
+}
+
+export async function markReviewHelpful(reviewId: number) {
+  const db = await getDb();
+  if (!db) throw new Error("Database not available");
+  
+  await db
+    .update(productReviews)
+    .set({ helpfulCount: sql`${productReviews.helpfulCount} + 1` })
+    .where(eq(productReviews.id, reviewId));
 }

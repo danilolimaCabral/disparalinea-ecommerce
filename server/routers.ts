@@ -251,6 +251,56 @@ export const appRouter = router({
         };
       }),
   }),
+  
+  // Product Reviews
+  reviews: router({
+    getProductReviews: publicProcedure
+      .input(z.object({ productId: z.number() }))
+      .query(async ({ input }) => {
+        return await db.getProductReviews(input.productId);
+      }),
+    
+    getProductRatingStats: publicProcedure
+      .input(z.object({ productId: z.number() }))
+      .query(async ({ input }) => {
+        return await db.getProductRatingStats(input.productId);
+      }),
+    
+    createReview: protectedProcedure
+      .input(
+        z.object({
+          productId: z.number(),
+          rating: z.number().min(1).max(5),
+          title: z.string().optional(),
+          comment: z.string().min(10, "Comment must be at least 10 characters"),
+          images: z.array(z.object({
+            imageUrl: z.string(),
+            imageKey: z.string(),
+          })).optional(),
+        })
+      )
+      .mutation(async ({ ctx, input }) => {
+        const { images, ...reviewData } = input;
+        
+        const reviewId = await db.createProductReview({
+          ...reviewData,
+          userId: ctx.user.id,
+        });
+        
+        if (images && images.length > 0) {
+          await db.addReviewImages(reviewId, images);
+        }
+        
+        return { reviewId };
+      }),
+    
+    markHelpful: publicProcedure
+      .input(z.object({ reviewId: z.number() }))
+      .mutation(async ({ input }) => {
+        await db.markReviewHelpful(input.reviewId);
+        return { success: true };
+      }),
+  }),
 });
 
 export type AppRouter = typeof appRouter;
