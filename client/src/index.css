@@ -234,3 +234,62 @@
 .badge-bestseller {
   @apply bg-accent text-accent-foreground text-xs font-semibold px-2 py-1 rounded;
 }
+/* Glassmorphism and Modern Effects */
+.glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-dark {
+  background: rgba(30, 58, 95, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.card-glass {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(30, 58, 95, 0.1);
+  box-shadow: 0 8px 32px rgba(30, 58, 95, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-glass:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(30, 58, 95, 0.15);
+  border-color: rgba(30, 58, 95, 0.2);
+}
+
+.gradient-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(30, 58, 95, 0.05) 0%, rgba(255, 215, 0, 0.05) 100%);
+  pointer-events: none;
+}
+
+.smooth-shadow {
+  box-shadow: 
+    0 1px 3px rgba(30, 58, 95, 0.05),
+    0 4px 12px rgba(30, 58, 95, 0.08),
+    0 8px 24px rgba(30, 58, 95, 0.06);
+}
+
+.smooth-shadow-hover:hover {
+  box-shadow: 
+    0 2px 6px rgba(30, 58, 95, 0.08),
+    0 8px 20px rgba(30, 58, 95, 0.12),
+    0 16px 40px rgba(30, 58, 95, 0.10);
+}

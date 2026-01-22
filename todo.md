@@ -164,3 +164,16 @@
 - [x] Ajustar layout do ticker para melhor visualização
 - [x] Remover fundo das imagens dos produtos
 - [x] Garantir imagens com fundo transparente ou branco limpo
+
+## Modernização do Layout com Glassmorphism
+- [x] Adicionar efeitos de transparência nos cards de produtos
+- [x] Implementar glassmorphism no header e footer
+- [x] Adicionar backdrop-blur e sombras suaves
+- [x] Melhorar hierarquia visual com gradientes sutis
+- [x] Adicionar animações suaves de hover e transição
+
+## Expansão do Catálogo de Produtos
+- [x] Adicionar mais 10 produtos de pneus (diferentes marcas e tamanhos)
+- [x] Adicionar mais 10 produtos de perfumes (diferentes marcas e tipos)
+- [x] Buscar imagens de alta qualidade com fundo transparente
+- [x] Popular banco de dados com novos produtos
