@@ -321,3 +321,15 @@
 - [x] Adicionar verificação de compra
 - [x] Adicionar botão "Helpful" para reviews
 - [x] Integrar reviews na página de detalhes do produto
+
+## Validação de Categorias
+
+- [x] Testar categoria Smartphones (3 produtos)
+- [x] Testar categoria Tablets (2 produtos)
+- [x] Testar categoria Wearables (2 produtos)
+- [x] Testar categoria Accessories (2 produtos)
+- [x] Testar categoria Laptops (2 produtos)
+- [x] Testar categoria Tires (12 produtos)
+- [x] Testar categoria Fragrances (13 produtos)
+- [x] Verificar contagem de produtos por categoria (36 total)
+- [x] Nenhum problema encontrado - todas funcionando perfeitamente

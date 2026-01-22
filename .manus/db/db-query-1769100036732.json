@@ -1,0 +1,38 @@
+{
+  "query": "SELECT c.nameEn as category, COUNT(p.id) as product_count \nFROM categories c \nLEFT JOIN products p ON c.id = p.categoryId \nGROUP BY c.id, c.nameEn \nORDER BY c.nameEn;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user gjuqDE6BkXEJ8aC.fbd2a1734466 --database VA6tZfdqK6JEcwJnq8qJwL --execute SELECT c.nameEn as category, COUNT(p.id) as product_count \nFROM categories c \nLEFT JOIN products p ON c.id = p.categoryId \nGROUP BY c.id, c.nameEn \nORDER BY c.nameEn;",
+  "rows": [
+    {
+      "category": "Accessories",
+      "product_count": "2"
+    },
+    {
+      "category": "Fragrances",
+      "product_count": "13"
+    },
+    {
+      "category": "Laptops",
+      "product_count": "2"
+    },
+    {
+      "category": "Smartphones",
+      "product_count": "3"
+    },
+    {
+      "category": "Tablets",
+      "product_count": "2"
+    },
+    {
+      "category": "Tires",
+      "product_count": "12"
+    },
+    {
+      "category": "Wearables",
+      "product_count": "2"
+    }
+  ],
+  "messages": [],
+  "stdout": "category\tproduct_count\nAccessories\t2\nFragrances\t13\nLaptops\t2\nSmartphones\t3\nTablets\t2\nTires\t12\nWearables\t2\n",
+  "stderr": "",
+  "execution_time_ms": 421
+}
