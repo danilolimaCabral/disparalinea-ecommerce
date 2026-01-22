@@ -1,0 +1,40 @@
+CREATE TABLE `orderItems` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`orderId` int NOT NULL,
+	`productId` int NOT NULL,
+	`productName` varchar(255) NOT NULL,
+	`productBrand` varchar(100),
+	`productImage` text,
+	`priceExclVat` varchar(20) NOT NULL,
+	`priceInclVat` varchar(20) NOT NULL,
+	`quantity` int NOT NULL,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	CONSTRAINT `orderItems_id` PRIMARY KEY(`id`)
+);
+--> statement-breakpoint
+CREATE TABLE `orders` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`userId` int NOT NULL,
+	`orderNumber` varchar(64) NOT NULL,
+	`status` enum('pending','processing','shipped','delivered','cancelled') NOT NULL DEFAULT 'pending',
+	`subtotal` varchar(20) NOT NULL,
+	`vatAmount` varchar(20) NOT NULL,
+	`shippingCost` varchar(20) NOT NULL DEFAULT '0.00',
+	`total` varchar(20) NOT NULL,
+	`shippingName` varchar(255) NOT NULL,
+	`shippingEmail` varchar(320) NOT NULL,
+	`shippingPhone` varchar(50),
+	`shippingAddress` text NOT NULL,
+	`shippingCity` varchar(100) NOT NULL,
+	`shippingPostalCode` varchar(20) NOT NULL,
+	`shippingCountry` varchar(100) NOT NULL,
+	`stripePaymentIntentId` varchar(255),
+	`paymentStatus` enum('pending','paid','failed','refunded') NOT NULL DEFAULT 'pending',
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	`paidAt` timestamp,
+	`shippedAt` timestamp,
+	`deliveredAt` timestamp,
+	CONSTRAINT `orders_id` PRIMARY KEY(`id`),
+	CONSTRAINT `orders_orderNumber_unique` UNIQUE(`orderNumber`)
+);

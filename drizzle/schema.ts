@@ -110,3 +110,61 @@ export const testimonials = mysqlTable("testimonials", {
 
 export type Testimonial = typeof testimonials.$inferSelect;
 export type InsertTestimonial = typeof testimonials.$inferInsert;
+
+/**
+ * Orders table - stores customer orders
+ */
+export const orders = mysqlTable("orders", {
+  id: int("id").autoincrement().primaryKey(),
+  userId: int("userId").notNull(),
+  
+  orderNumber: varchar("orderNumber", { length: 64 }).notNull().unique(),
+  status: mysqlEnum("status", ["pending", "processing", "shipped", "delivered", "cancelled"]).default("pending").notNull(),
+  
+  subtotal: varchar("subtotal", { length: 20 }).notNull(),
+  vatAmount: varchar("vatAmount", { length: 20 }).notNull(),
+  shippingCost: varchar("shippingCost", { length: 20 }).default("0.00").notNull(),
+  total: varchar("total", { length: 20 }).notNull(),
+  
+  shippingName: varchar("shippingName", { length: 255 }).notNull(),
+  shippingEmail: varchar("shippingEmail", { length: 320 }).notNull(),
+  shippingPhone: varchar("shippingPhone", { length: 50 }),
+  shippingAddress: text("shippingAddress").notNull(),
+  shippingCity: varchar("shippingCity", { length: 100 }).notNull(),
+  shippingPostalCode: varchar("shippingPostalCode", { length: 20 }).notNull(),
+  shippingCountry: varchar("shippingCountry", { length: 100 }).notNull(),
+  
+  stripePaymentIntentId: varchar("stripePaymentIntentId", { length: 255 }),
+  paymentStatus: mysqlEnum("paymentStatus", ["pending", "paid", "failed", "refunded"]).default("pending").notNull(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+  updatedAt: timestamp("updatedAt").defaultNow().onUpdateNow().notNull(),
+  paidAt: timestamp("paidAt"),
+  shippedAt: timestamp("shippedAt"),
+  deliveredAt: timestamp("deliveredAt"),
+});
+
+export type Order = typeof orders.$inferSelect;
+export type InsertOrder = typeof orders.$inferInsert;
+
+/**
+ * Order items table - stores individual items in each order
+ */
+export const orderItems = mysqlTable("orderItems", {
+  id: int("id").autoincrement().primaryKey(),
+  orderId: int("orderId").notNull(),
+  productId: int("productId").notNull(),
+  
+  productName: varchar("productName", { length: 255 }).notNull(),
+  productBrand: varchar("productBrand", { length: 100 }),
+  productImage: text("productImage"),
+  
+  priceExclVat: varchar("priceExclVat", { length: 20 }).notNull(),
+  priceInclVat: varchar("priceInclVat", { length: 20 }).notNull(),
+  quantity: int("quantity").notNull(),
+  
+  createdAt: timestamp("createdAt").defaultNow().notNull(),
+});
+
+export type OrderItem = typeof orderItems.$inferSelect;
+export type InsertOrderItem = typeof orderItems.$inferInsert;

@@ -1,8 +1,8 @@
-import { z } from "zod";
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
 import { publicProcedure, protectedProcedure, router } from "./_core/trpc";
+import { z } from "zod";
 import * as db from "./db";
 
 export const appRouter = router({
@@ -134,6 +134,122 @@ export const appRouter = router({
     list: publicProcedure.query(async () => {
       return await db.getActiveTestimonials();
     }),
+  }),
+
+  orders: router({
+    list: protectedProcedure.query(async ({ ctx }) => {
+      const dbOrders = await import("./db-orders");
+      return await dbOrders.getUserOrders(ctx.user.id);
+    }),
+
+    getByNumber: protectedProcedure
+      .input(z.object({ orderNumber: z.string() }))
+      .query(async ({ input }) => {
+        const dbOrders = await import("./db-orders");
+        return await dbOrders.getOrderByNumber(input.orderNumber);
+      }),
+  }),
+
+  checkout: router({
+    createSession: protectedProcedure
+      .input(
+        z.object({
+          shippingName: z.string().min(1),
+          shippingEmail: z.string().email(),
+          shippingPhone: z.string().optional(),
+          shippingAddress: z.string().min(1),
+          shippingCity: z.string().min(1),
+          shippingPostalCode: z.string().min(1),
+          shippingCountry: z.string().min(1),
+        })
+      )
+      .mutation(async ({ ctx, input }) => {
+        const Stripe = (await import("stripe")).default;
+        const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+          apiVersion: "2025-12-15.clover",
+        });
+        const dbOrders = await import("./db-orders");
+        const { eurToCents } = await import("./stripe-products");
+
+        // Get cart items
+        const cartItems = await db.getCartItems(ctx.user.id);
+        if (!cartItems || cartItems.length === 0) {
+          throw new Error("Cart is empty");
+        }
+
+        // Calculate totals
+        const subtotalExclVat = cartItems.reduce((sum, item) => {
+          if (!item.product) return sum;
+          return sum + parseFloat(item.product.priceExclVat) * item.quantity;
+        }, 0);
+
+        const vatAmount = subtotalExclVat * 0.23;
+        const shippingCost = 0; // Free shipping
+        const total = subtotalExclVat + vatAmount + shippingCost;
+
+        // Create order in database
+        const { orderId, orderNumber } = await dbOrders.createOrder(
+          ctx.user.id,
+          {
+            status: "pending",
+            subtotal: subtotalExclVat.toFixed(2),
+            vatAmount: vatAmount.toFixed(2),
+            shippingCost: shippingCost.toFixed(2),
+            total: total.toFixed(2),
+            shippingName: input.shippingName,
+            shippingEmail: input.shippingEmail,
+            shippingPhone: input.shippingPhone || null,
+            shippingAddress: input.shippingAddress,
+            shippingCity: input.shippingCity,
+            shippingPostalCode: input.shippingPostalCode,
+            shippingCountry: input.shippingCountry,
+            paymentStatus: "pending",
+          },
+          cartItems.map((item) => ({
+            productId: item.product!.id,
+            productName: item.product!.nameEn,
+            productBrand: item.product!.brand || null,
+            productImage: item.product!.imageUrl || null,
+            priceExclVat: item.product!.priceExclVat,
+            priceInclVat: item.product!.priceInclVat,
+            quantity: item.quantity,
+          }))
+        );
+
+        // Create Stripe checkout session
+        const session = await stripe.checkout.sessions.create({
+          payment_method_types: ["card"],
+          line_items: cartItems.map((item) => ({
+            price_data: {
+              currency: "eur",
+              product_data: {
+                name: item.product!.nameEn,
+                description: item.product!.brand || undefined,
+                images: item.product!.imageUrl ? [item.product!.imageUrl] : undefined,
+              },
+              unit_amount: eurToCents(parseFloat(item.product!.priceInclVat)),
+            },
+            quantity: item.quantity,
+          })),
+          mode: "payment",
+          success_url: `${ctx.req.headers.origin}/order-confirmation?order=${orderNumber}`,
+          cancel_url: `${ctx.req.headers.origin}/cart`,
+          customer_email: input.shippingEmail,
+          client_reference_id: orderId.toString(),
+          metadata: {
+            orderId: orderId.toString(),
+            orderNumber,
+            userId: ctx.user.id.toString(),
+          },
+          allow_promotion_codes: true,
+        });
+
+        return {
+          sessionId: session.id,
+          sessionUrl: session.url,
+          orderNumber,
+        };
+      }),
   }),
 });
 

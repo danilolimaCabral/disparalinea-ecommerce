@@ -9,6 +9,10 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { CurrencyTicker } from "./components/CurrencyTicker";
 import Home from "./pages/Home";
+import ProductDetail from "./pages/ProductDetail";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import OrderConfirmation from "./pages/OrderConfirmation";
 import { trpc } from "./lib/trpc";
 
 function AppContent() {
@@ -31,6 +35,10 @@ function AppContent() {
       <main className="flex-1">
         <Switch>
           <Route path={"/"} component={Home} />
+          <Route path="/product/:slug" component={ProductDetail} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/checkout" component={Checkout} />
+          <Route path="/order-confirmation" component={OrderConfirmation} />
           <Route path={"/404"} component={NotFound} />
           <Route component={NotFound} />
         </Switch>

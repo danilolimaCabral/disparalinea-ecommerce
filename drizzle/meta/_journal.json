@@ -15,6 +15,13 @@
       "when": 1769050187267,
       "tag": "0001_fast_thena",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1769051417424,
+      "tag": "0002_fancy_grandmaster",
+      "breakpoints": true
     }
   ]
 }

@@ -81,3 +81,23 @@
 - [x] Verificar por que as imagens dos produtos não estão aparecendo
 - [x] Corrigir logo DT dourada circular no header
 - [x] Garantir que todas as imagens estejam acessíveis
+
+## Página de Detalhes do Produto
+- [x] Criar rota e página de detalhes do produto
+- [x] Implementar galeria de imagens com navegação
+- [x] Adicionar funcionalidade de zoom nas imagens
+- [x] Exibir especificações técnicas detalhadas
+- [x] Criar sistema de reviews/avaliações
+- [x] Adicionar seção de produtos relacionados
+- [x] Implementar botão de adicionar ao carrinho na página
+
+## Sistema de Checkout Completo
+- [x] Criar página do carrinho de compras
+- [x] Implementar atualização de quantidades no carrinho
+- [x] Criar página de checkout
+- [x] Adicionar formulário de endereço de entrega
+- [x] Implementar seleção de método de envio
+- [x] Configurar integração Stripe
+- [x] Criar webhook do Stripe para processar pagamentos
+- [x] Implementar página de confirmação do pedido
+- [x] Limpar carrinho após pagamento bem-sucedido[ ] Adicionar sistema de pedidos no banco de dados
