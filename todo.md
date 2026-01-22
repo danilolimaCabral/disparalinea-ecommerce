@@ -177,3 +177,27 @@
 - [x] Adicionar mais 10 produtos de perfumes (diferentes marcas e tipos)
 - [x] Buscar imagens de alta qualidade com fundo transparente
 - [x] Popular banco de dados com novos produtos
+
+## Páginas de Categoria Dedicadas (Nano Banana Style)
+- [x] Criar página /tires com grid completo de produtos de pneus
+- [x] Adicionar filtros específicos para pneus (marca, tamanho, tipo, preço)
+- [x] Criar página /fragrances com grid completo de perfumes
+- [x] Adicionar filtros específicos para perfumes (marca, gênero, volume, preço)
+- [x] Implementar animações suaves e transições elegantes
+- [x] Adicionar loading skeletons para melhor UX
+
+## Sistema de Autenticação Próprio
+- [ ] Remover dependências do OAuth Manus
+- [ ] Criar schema de usuários local com senha hash
+- [ ] Implementar página de registro com validação
+- [ ] Implementar página de login com feedback visual
+- [ ] Adicionar recuperação de senha por email
+- [ ] Criar página de perfil de usuário editável
+- [ ] Implementar sessões JWT locais
+- [ ] Atualizar Header para usar novo sistema de auth
+
+## Imagens dos Novos Produtos
+- [x] Buscar imagens profissionais dos 5 pneus (Dunlop, Yokohama, Hankook, Falken, Toyo)
+- [x] Buscar imagens profissionais dos 5 perfumes (Tom Ford, YSL, Gucci, JPG, Carolina Herrera)
+- [x] Garantir fundo transparente ou branco limpo
+- [x] Atualizar banco de dados com URLs das novas imagens

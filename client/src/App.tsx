@@ -14,6 +14,8 @@ import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import OrderConfirmation from "./pages/OrderConfirmation";
+import TiresCategory from "./pages/TiresCategory";
+import FragrancesCategory from "./pages/FragrancesCategory";
 import { trpc } from "./lib/trpc";
 
 function AppContent() {
@@ -40,6 +42,8 @@ function AppContent() {
           <Route path="/cart" component={Cart} />
           <Route path="/checkout" component={Checkout} />
           <Route path="/order-confirmation" component={OrderConfirmation} />
+          <Route path="/tires" component={TiresCategory} />
+          <Route path="/fragrances" component={FragrancesCategory} />
           <Route path={"/404"} component={NotFound} />
           <Route component={NotFound} />
         </Switch>
