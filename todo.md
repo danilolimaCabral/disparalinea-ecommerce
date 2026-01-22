@@ -76,3 +76,8 @@
 - [x] Atualizar banco de dados com URLs de imagens de produtos
 - [x] Adicionar imagens de categorias
 - [x] Adicionar fotos de clientes nos depoimentos
+
+## Correções Urgentes
+- [x] Verificar por que as imagens dos produtos não estão aparecendo
+- [x] Corrigir logo DT dourada circular no header
+- [x] Garantir que todas as imagens estejam acessíveis
