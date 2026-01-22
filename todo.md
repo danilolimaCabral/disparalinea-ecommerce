@@ -212,3 +212,67 @@
 - [x] Criar página /contact com formulário de contato
 - [x] Atualizar Header com links corretos (usando Link do wouter)
 - [x] Testar todos os links do menu
+
+## Remover Autenticação Manus OAuth
+- [ ] Atualizar schema de users para adicionar campo password (hash)
+- [ ] Remover campo openId do schema de users
+- [ ] Implementar hash de senhas com bcrypt
+- [ ] Criar tRPC procedure para registro (signup)
+- [ ] Criar tRPC procedure para login com email/senha
+- [ ] Criar tRPC procedure para recuperação de senha
+- [ ] Criar tRPC procedure para atualizar perfil de usuário
+- [ ] Criar página /register com formulário de cadastro
+- [ ] Criar página /login com formulário de login
+- [ ] Criar página /profile para editar informações do usuário
+- [ ] Criar página /forgot-password para recuperação de senha
+- [ ] Remover botão "Login" que redireciona para OAuth Manus
+- [ ] Atualizar Header com link para /login
+- [ ] Remover dependências de OAuth Manus do código
+- [ ] Testar fluxo completo de registro, login e recuperação de senha
+
+## Teste Completo do Site
+### Navegação e Links
+- [x] Testar todos os links do menu (Home, Smartphones, Tablets, Wearables, Accessories, Laptops, Tires, Fragrances, About Us, Contact)
+- [x] Verificar se todas as páginas carregam corretamente
+- [ ] Testar botão de voltar em páginas internas
+- [ ] Verificar links do footer
+
+### Imagens
+- [x] Verificar se logo DisparaLinea carrega corretamente
+- [x] Verificar imagem do hero section (smartphone)
+- [x] Verificar logos das marcas (Apple, Samsung, Google, Xiaomi, OnePlus)
+- [x] Verificar imagens de todos os produtos (36 produtos)
+- [x] Verificar imagens nas páginas de detalhes dos produtos
+- [x] Verificar fotos dos depoimentos de clientes
+
+### Funcionalidades do Carrinho
+- [ ] Testar adicionar produto ao carrinho
+- [ ] Verificar contador do carrinho no header
+- [ ] Testar página do carrinho (/cart)
+- [ ] Testar remover produto do carrinho
+- [ ] Testar atualizar quantidade no carrinho
+- [ ] Verificar cálculo de totais (com e sem IVA)
+
+### Checkout e Pagamento
+- [ ] Testar botão "Proceed to Checkout"
+- [ ] Verificar formulário de endereço de entrega
+- [ ] Testar integração Stripe
+- [ ] Verificar página de confirmação do pedido
+
+### Filtros e Busca
+- [ ] Testar filtros em cada página de categoria
+- [ ] Verificar ordenação de produtos (preço, relevância)
+- [ ] Testar ícone de busca no header
+- [ ] Verificar resultados de busca
+
+### Multi-idioma
+- [ ] Testar seletor de idioma PT/EN
+- [ ] Verificar traduções em todas as páginas
+- [ ] Verificar persistência da escolha de idioma
+
+### Outros
+- [ ] Testar ticker de câmbio (animação e valores)
+- [ ] Testar cookie banner (Customize, Reject All, Accept All)
+- [ ] Verificar responsividade em mobile
+- [ ] Testar formulário de newsletter
+- [ ] Testar formulário de contato
