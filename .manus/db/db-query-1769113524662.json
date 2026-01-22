@@ -1,0 +1,43 @@
+{
+  "query": "SHOW TABLES;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user gjuqDE6BkXEJ8aC.fbd2a1734466 --database VA6tZfdqK6JEcwJnq8qJwL --execute SHOW TABLES;",
+  "rows": [
+    {
+      "Tables_in_VA6tZfdqK6JEcwJnq8qJwL": "__drizzle_migrations"
+    },
+    {
+      "Tables_in_VA6tZfdqK6JEcwJnq8qJwL": "cartItems"
+    },
+    {
+      "Tables_in_VA6tZfdqK6JEcwJnq8qJwL": "categories"
+    },
+    {
+      "Tables_in_VA6tZfdqK6JEcwJnq8qJwL": "newsletterSubscriptions"
+    },
+    {
+      "Tables_in_VA6tZfdqK6JEcwJnq8qJwL": "orderItems"
+    },
+    {
+      "Tables_in_VA6tZfdqK6JEcwJnq8qJwL": "orders"
+    },
+    {
+      "Tables_in_VA6tZfdqK6JEcwJnq8qJwL": "productReviews"
+    },
+    {
+      "Tables_in_VA6tZfdqK6JEcwJnq8qJwL": "products"
+    },
+    {
+      "Tables_in_VA6tZfdqK6JEcwJnq8qJwL": "reviewImages"
+    },
+    {
+      "Tables_in_VA6tZfdqK6JEcwJnq8qJwL": "testimonials"
+    },
+    {
+      "Tables_in_VA6tZfdqK6JEcwJnq8qJwL": "users"
+    }
+  ],
+  "messages": [],
+  "stdout": "Tables_in_VA6tZfdqK6JEcwJnq8qJwL\n__drizzle_migrations\ncartItems\ncategories\nnewsletterSubscriptions\norderItems\norders\nproductReviews\nproducts\nreviewImages\ntestimonials\nusers\n",
+  "stderr": "",
+  "execution_time_ms": 372
+}
