@@ -134,3 +134,7 @@
 - [x] Reorganizar header em uma única linha moderna
 - [x] Integrar busca e ícones (idioma, login, carrinho) de forma mais limpa
 - [x] Melhorar espaçamento e alinhamento dos elementos
+
+## Ajuste do Campo de Busca
+- [x] Ajustar estilo do campo de busca para ficar igual ao site de referência
+- [x] Verificar bordas, cantos, tamanho e espaçamento

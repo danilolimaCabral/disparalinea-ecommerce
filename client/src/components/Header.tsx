@@ -90,25 +90,15 @@ export function Header({
             </div>
           </Link>
 
-          {/* Search Bar - Desktop */}
-          <form
-            onSubmit={handleSearch}
-            className="hidden md:flex flex-1 max-w-2xl"
-          >
-            <div className="relative w-full">
-              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-              <Input
-                type="search"
-                placeholder={t.search}
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-12 pr-4 h-11 text-base rounded-full border-2 focus:border-primary transition-colors"
-              />
-            </div>
-          </form>
+          {/* Spacer */}
+          <div className="flex-1" />
 
           {/* Actions - Right Side */}
           <div className="flex items-center gap-3 flex-shrink-0">
+            {/* Search Icon */}
+            <Button variant="ghost" size="icon" className="hidden sm:flex h-10 w-10 rounded-full hover:bg-accent">
+              <Search className="h-5 w-5" />
+            </Button>
             {/* Language Selector */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
