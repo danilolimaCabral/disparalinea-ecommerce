@@ -65,13 +65,13 @@ export function Header({
   };
 
   const categories = [
-    { name: t.smartphones, path: "/category/smartphones" },
-    { name: t.tablets, path: "/category/tablets" },
-    { name: t.wearables, path: "/category/wearables" },
-    { name: t.accessories, path: "/category/accessories" },
-    { name: t.laptops, path: "/category/laptops" },
-    { name: t.tires, path: "/category/tires" },
-    { name: t.fragrances, path: "/category/fragrances" },
+    { name: t.smartphones, path: "/smartphones" },
+    { name: t.tablets, path: "/tablets" },
+    { name: t.wearables, path: "/wearables" },
+    { name: t.accessories, path: "/accessories" },
+    { name: t.laptops, path: "/laptops" },
+    { name: t.tires, path: "/tires" },
+    { name: t.fragrances, path: "/fragrances" },
   ];
 
   return (
@@ -104,7 +104,7 @@ export function Header({
                 </Button>
               </Link>
             ))}
-            <Link href="/about">
+            <Link href="/about-us">
               <Button variant="ghost" size="sm" className="text-sm">
                 {t.about}
               </Button>

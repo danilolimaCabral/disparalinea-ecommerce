@@ -16,6 +16,13 @@ import Checkout from "./pages/Checkout";
 import OrderConfirmation from "./pages/OrderConfirmation";
 import TiresCategory from "./pages/TiresCategory";
 import FragrancesCategory from "./pages/FragrancesCategory";
+import SmartphonesCategory from "./pages/SmartphonesCategory";
+import TabletsCategory from "./pages/TabletsCategory";
+import WearablesCategory from "./pages/WearablesCategory";
+import AccessoriesCategory from "./pages/AccessoriesCategory";
+import LaptopsCategory from "./pages/LaptopsCategory";
+import AboutUs from "./pages/AboutUs";
+import Contact from "./pages/Contact";
 import { trpc } from "./lib/trpc";
 
 function AppContent() {
@@ -42,8 +49,15 @@ function AppContent() {
           <Route path="/cart" component={Cart} />
           <Route path="/checkout" component={Checkout} />
           <Route path="/order-confirmation" component={OrderConfirmation} />
+          <Route path="/smartphones" component={SmartphonesCategory} />
+          <Route path="/tablets" component={TabletsCategory} />
+          <Route path="/wearables" component={WearablesCategory} />
+          <Route path="/accessories" component={AccessoriesCategory} />
+          <Route path="/laptops" component={LaptopsCategory} />
           <Route path="/tires" component={TiresCategory} />
           <Route path="/fragrances" component={FragrancesCategory} />
+          <Route path="/about-us" component={AboutUs} />
+          <Route path="/contact" component={Contact} />
           <Route path={"/404"} component={NotFound} />
           <Route component={NotFound} />
         </Switch>

@@ -201,3 +201,14 @@
 - [x] Buscar imagens profissionais dos 5 perfumes (Tom Ford, YSL, Gucci, JPG, Carolina Herrera)
 - [x] Garantir fundo transparente ou branco limpo
 - [x] Atualizar banco de dados com URLs das novas imagens
+
+## URGENTE: Corrigir Todos os Links de Navegação
+- [x] Criar página /smartphones com grid de produtos e filtros
+- [x] Criar página /tablets com grid de produtos e filtros
+- [x] Criar página /wearables com grid de produtos e filtros
+- [x] Criar página /accessories com grid de produtos e filtros
+- [x] Criar página /laptops com grid de produtos e filtros
+- [x] Criar página /about-us com informações da empresa
+- [x] Criar página /contact com formulário de contato
+- [x] Atualizar Header com links corretos (usando Link do wouter)
+- [x] Testar todos os links do menu
