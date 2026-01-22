@@ -1,0 +1,190 @@
+{
+  "query": "SELECT id, nameEn, slug FROM products ORDER BY categoryId, id;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user gjuqDE6BkXEJ8aC.fbd2a1734466 --database VA6tZfdqK6JEcwJnq8qJwL --execute SELECT id, nameEn, slug FROM products ORDER BY categoryId, id;",
+  "rows": [
+    {
+      "id": "16",
+      "nameEn": "Samsung Galaxy S24 Ultra 512GB",
+      "slug": "samsung-galaxy-s24-ultra-512gb"
+    },
+    {
+      "id": "17",
+      "nameEn": "Apple iPhone 15 Pro Max 256GB",
+      "slug": "apple-iphone-15-pro-max-256gb"
+    },
+    {
+      "id": "18",
+      "nameEn": "Google Pixel 8 Pro 256GB",
+      "slug": "google-pixel-8-pro-256gb"
+    },
+    {
+      "id": "19",
+      "nameEn": "Apple iPad Pro 11\" 256GB",
+      "slug": "apple-ipad-pro-11-256gb"
+    },
+    {
+      "id": "20",
+      "nameEn": "Samsung Galaxy Tab S9 Ultra",
+      "slug": "samsung-galaxy-tab-s9-ultra"
+    },
+    {
+      "id": "21",
+      "nameEn": "Apple Watch Series 9 45mm",
+      "slug": "apple-watch-series-9-45mm"
+    },
+    {
+      "id": "22",
+      "nameEn": "Samsung Galaxy Watch 6 Classic",
+      "slug": "samsung-galaxy-watch-6-classic"
+    },
+    {
+      "id": "23",
+      "nameEn": "Apple AirPods Pro 2nd Generation USB-C",
+      "slug": "apple-airpods-pro-2nd-gen-usbc"
+    },
+    {
+      "id": "24",
+      "nameEn": "Samsung Galaxy Buds2 Pro",
+      "slug": "samsung-galaxy-buds2-pro"
+    },
+    {
+      "id": "25",
+      "nameEn": "Apple MacBook Pro 14\" M3 512GB",
+      "slug": "apple-macbook-pro-14-m3-512gb"
+    },
+    {
+      "id": "26",
+      "nameEn": "Dell XPS 15 Intel i9",
+      "slug": "dell-xps-15-intel-i9"
+    },
+    {
+      "id": "27",
+      "nameEn": "Michelin Pilot Sport 4S 245/40 R18",
+      "slug": "michelin-pilot-sport-4s-245-40-r18"
+    },
+    {
+      "id": "28",
+      "nameEn": "Continental WinterContact TS 860 205/55 R16",
+      "slug": "continental-wintercontact-ts-860-205-55-r16"
+    },
+    {
+      "id": "30001",
+      "nameEn": "Michelin Pilot Sport 4",
+      "slug": "michelin-pilot-sport-4"
+    },
+    {
+      "id": "30002",
+      "nameEn": "Bridgestone Turanza T005",
+      "slug": "bridgestone-turanza-t005"
+    },
+    {
+      "id": "30003",
+      "nameEn": "Pirelli P Zero",
+      "slug": "pirelli-p-zero"
+    },
+    {
+      "id": "30004",
+      "nameEn": "Continental PremiumContact 6",
+      "slug": "continental-premiumcontact-6"
+    },
+    {
+      "id": "30005",
+      "nameEn": "Goodyear Eagle F1 Asymmetric 5",
+      "slug": "goodyear-eagle-f1-asymmetric-5"
+    },
+    {
+      "id": "60001",
+      "nameEn": "Dunlop Sport Maxx RT2",
+      "slug": "dunlop-sport-maxx-rt2"
+    },
+    {
+      "id": "60002",
+      "nameEn": "Yokohama Advan Sport V105",
+      "slug": "yokohama-advan-sport-v105"
+    },
+    {
+      "id": "60003",
+      "nameEn": "Hankook Ventus S1 evo3",
+      "slug": "hankook-ventus-s1-evo3"
+    },
+    {
+      "id": "60004",
+      "nameEn": "Falken Azenis FK510",
+      "slug": "falken-azenis-fk510"
+    },
+    {
+      "id": "60005",
+      "nameEn": "Toyo Proxes Sport",
+      "slug": "toyo-proxes-sport"
+    },
+    {
+      "id": "29",
+      "nameEn": "Dior Sauvage Eau de Parfum 100ml",
+      "slug": "dior-sauvage-eau-de-parfum-100ml"
+    },
+    {
+      "id": "30",
+      "nameEn": "Chanel No. 5 Eau de Parfum 100ml",
+      "slug": "chanel-no5-eau-de-parfum-100ml"
+    },
+    {
+      "id": "30006",
+      "nameEn": "Dior Sauvage Eau de Toilette 100ml",
+      "slug": "dior-sauvage-edt-100ml"
+    },
+    {
+      "id": "30007",
+      "nameEn": "Chanel No. 5 Eau de Parfum 100ml",
+      "slug": "chanel-no-5-edp-100ml"
+    },
+    {
+      "id": "30008",
+      "nameEn": "Versace Eros Eau de Toilette 100ml",
+      "slug": "versace-eros-edt-100ml"
+    },
+    {
+      "id": "30009",
+      "nameEn": "Paco Rabanne 1 Million Eau de Toilette 100ml",
+      "slug": "paco-rabanne-1-million-edt-100ml"
+    },
+    {
+      "id": "30010",
+      "nameEn": "Hugo Boss Bottled Eau de Toilette 100ml",
+      "slug": "hugo-boss-bottled-edt-100ml"
+    },
+    {
+      "id": "30011",
+      "nameEn": "Giorgio Armani Acqua di Giò 100ml",
+      "slug": "armani-acqua-di-gio-100ml"
+    },
+    {
+      "id": "60006",
+      "nameEn": "Tom Ford Oud Wood Eau de Parfum 100ml",
+      "slug": "tom-ford-oud-wood"
+    },
+    {
+      "id": "60007",
+      "nameEn": "Yves Saint Laurent Y Eau de Toilette 100ml",
+      "slug": "yves-saint-laurent-y"
+    },
+    {
+      "id": "60008",
+      "nameEn": "Gucci Guilty Pour Homme Eau de Toilette 90ml",
+      "slug": "gucci-guilty-pour-homme"
+    },
+    {
+      "id": "60009",
+      "nameEn": "Jean Paul Gaultier Le Male Eau de Toilette 125ml",
+      "slug": "jean-paul-gaultier-le-male"
+    },
+    {
+      "id": "60010",
+      "nameEn": "Carolina Herrera 212 VIP Men Eau de Toilette 100ml",
+      "slug": "carolina-herrera-212-vip"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tnameEn\tslug\n16\tSamsung Galaxy S24 Ultra 512GB\tsamsung-galaxy-s24-ultra-512gb\n17\tApple iPhone 15 Pro Max 256GB\tapple-iphone-15-pro-max-256gb\n18\tGoogle Pixel 8 Pro 256GB\tgoogle-pixel-8-pro-256gb\n19\tApple iPad Pro 11\" 256GB\tapple-ipad-pro-11-256gb\n20\tSamsung Galaxy Tab S9 Ultra\tsamsung-galaxy-tab-s9-ultra\n21\tApple Watch Series 9 45mm\tapple-watch-series-9-45mm\n22\tSamsung Galaxy Watch 6 Classic\tsamsung-galaxy-watch-6-classic\n23\tApple AirPods Pro 2nd Generation USB-C\tapple-airpods-pro-2nd-gen-usbc\n24\tSamsung Galaxy Buds2 Pro\tsamsung-galaxy-buds2-pro\n25\tApple MacBook Pro 14\" M3 512GB\tapple-macbook-pro-14-m3-512gb\n26\tDell XPS 15 Intel i9\tdell-xps-15-intel-i9\n27\tMichelin Pilot Sport 4S 245/40 R18\tmichelin-pilot-sport-4s-245-40-r18\n28\tContinental WinterContact TS 860 205/55 R16\tcontinental-wintercontact-ts-860-205-55-r16\n30001\tMichelin Pilot Sport 4\tmichelin-pilot-sport-4\n30002\tBridgestone Turanza T005\tbridgestone-turanza-t005\n30003\tPirelli P Zero\tpirelli-p-zero\n30004\tContinental PremiumContact 6\tcontinental-premiumcontact-6\n30005\tGoodyear Eagle F1 Asymmetric 5\tgoodyear-eagle-f1-asymmetric-5\n60001\tDunlop Sport Maxx RT2\tdunlop-sport-maxx-rt2\n60002\tYokohama Advan Sport V105\tyokohama-advan-sport-v105\n60003\tHankook Ventus S1 evo3\thankook-ventus-s1-evo3\n60004\tFalken Azenis FK510\tfalken-azenis-fk510\n60005\tToyo Proxes Sport\ttoyo-proxes-sport\n29\tDior Sauvage Eau de Parfum 100ml\tdior-sauvage-eau-de-parfum-100ml\n30\tChanel No. 5 Eau de Parfum 100ml\tchanel-no5-eau-de-parfum-100ml\n30006\tDior Sauvage Eau de Toilette 100ml\tdior-sauvage-edt-100ml\n30007\tChanel No. 5 Eau de Parfum 100ml\tchanel-no-5-edp-100ml\n30008\tVersace Eros Eau de Toilette 100ml\tversace-eros-edt-100ml\n30009\tPaco Rabanne 1 Million Eau de Toilette 100ml\tpaco-rabanne-1-million-edt-100ml\n30010\tHugo Boss Bottled Eau de Toilette 100ml\thugo-boss-bottled-edt-100ml\n30011\tGiorgio Armani Acqua di Giò 100ml\tarmani-acqua-di-gio-100ml\n60006\tTom Ford Oud Wood Eau de Parfum 100ml\ttom-ford-oud-wood\n60007\tYves Saint Laurent Y Eau de Toilette 100ml\tyves-saint-laurent-y\n60008\tGucci Guilty Pour Homme Eau de Toilette 90ml\tgucci-guilty-pour-homme\n60009\tJean Paul Gaultier Le Male Eau de Toilette 125ml\tjean-paul-gaultier-le-male\n60010\tCarolina Herrera 212 VIP Men Eau de Toilette 100ml\tcarolina-herrera-212-vip\n",
+  "stderr": "",
+  "execution_time_ms": 364
+}

@@ -1,0 +1,16 @@
+{
+  "query": "SELECT id, nameEn, namePt, slug FROM products WHERE nameEn LIKE '%AirPods%';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user gjuqDE6BkXEJ8aC.fbd2a1734466 --database VA6tZfdqK6JEcwJnq8qJwL --execute SELECT id, nameEn, namePt, slug FROM products WHERE nameEn LIKE '%AirPods%';",
+  "rows": [
+    {
+      "id": "23",
+      "nameEn": "Apple AirPods Pro 2nd Generation USB-C",
+      "namePt": "Apple AirPods Pro 2ª Geração USB-C",
+      "slug": "apple-airpods-pro-2nd-gen-usbc"
+    }
+  ],
+  "messages": [],
+  "stdout": "id\tnameEn\tnamePt\tslug\n23\tApple AirPods Pro 2nd Generation USB-C\tApple AirPods Pro 2ª Geração USB-C\tapple-airpods-pro-2nd-gen-usbc\n",
+  "stderr": "",
+  "execution_time_ms": 351
+}

@@ -333,3 +333,66 @@
 - [x] Testar categoria Fragrances (13 produtos)
 - [x] Verificar contagem de produtos por categoria (36 total)
 - [x] Nenhum problema encontrado - todas funcionando perfeitamente
+
+## Validação Individual de Todos os Produtos (36 total)
+
+**Status:** Validação por amostragem estratégica (7 produtos testados)
+**Problema Crítico Encontrado:** Inconsistência de slugs PT/EN
+
+### Smartphones (3)
+- [x] Samsung Galaxy S24 Ultra 512GB ✅ PERFEITO
+- [ ] Apple iPhone 15 Pro Max 256GB
+- [ ] Google Pixel 8 Pro 256GB
+
+### Tablets (2)
+- [x] Apple iPad Pro 11" 256GB ✅ PERFEITO
+- [ ] Samsung Galaxy Tab S9 Ultra
+
+### Wearables (2)
+- [x] Apple Watch Series 9 45mm ✅ PERFEITO
+- [ ] Samsung Galaxy Watch 6 Classic
+
+### Acessórios (2)
+- [ ] Apple AirPods Pro 2ª Geração USB-C ❌ SLUG INCONSISTENTE
+- [ ] Samsung Galaxy Buds2 Pro
+
+### Laptops (2)
+- [x] Apple MacBook Pro 14" M3 512GB ✅ PERFEITO
+- [ ] Dell XPS 15 Intel i9
+
+### Pneus (12)
+- [ ] Dunlop Sport Maxx RT2
+- [ ] Yokohama Advan Sport V105
+- [ ] Hankook Ventus S1 evo3
+- [ ] Falken Azenis FK510
+- [ ] Toyo Proxes Sport
+- [ ] Pirelli P Zero
+- [ ] Continental PremiumContact 6
+- [ ] Goodyear Eagle F1 Asymmetric 5
+- [x] Michelin Pilot Sport 4 ✅ PERFEITO
+- [ ] Bridgestone Turanza T005
+- [ ] Michelin Pilot Sport 4S 245/40 R18
+- [ ] Continental WinterContact TS 860 205/55 R16
+
+### Fragrâncias (13)
+- [ ] Carolina Herrera 212 VIP Men
+- [ ] Tom Ford Oud Wood
+- [ ] Jean Paul Gaultier Le Male
+- [ ] Gucci Guilty Pour Homme
+- [ ] Yves Saint Laurent Y
+- [ ] Chanel No. 5 (variação 1)
+- [ ] Hugo Boss Bottled
+- [ ] Giorgio Armani Acqua di Giò
+- [ ] Paco Rabanne 1 Million
+- [ ] Versace Eros
+- [ ] Dior Sauvage EDT ❌ SLUG INCONSISTENTE
+- [ ] Dior Sauvage EDP
+- [ ] Chanel No. 5 (variação 2)
+
+## 🔴 PROBLEMA CRÍTICO: Inconsistência de Slugs
+
+- [ ] URGENTE: Corrigir slugs PT/EN no banco de dados
+- [ ] Opção A: Regenerar todos os slugs em inglês (recomendado)
+- [ ] Opção B: Atualizar código para usar slugs em português
+- [ ] Validar TODOS os 36 produtos após correção
+- [ ] Implementar testes automatizados para validação de slugs
