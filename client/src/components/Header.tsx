@@ -76,31 +76,31 @@ export function Header({
   ];
 
   return (
-    <header className="bg-background border-b border-border sticky top-0 z-50 shadow-sm">
+    <header className="bg-background/95 backdrop-blur-md border-b border-border/50 sticky top-0 z-50 shadow-lg">
       <div className="container">
         {/* Main Header - Single Line with Navigation */}
-        <div className="flex items-center justify-between py-4 gap-4">
+        <div className="flex items-center justify-between py-3 gap-4">
           {/* Logo */}
           <Link href="/">
             <div className="flex items-center cursor-pointer flex-shrink-0">
               <img 
                 src="/logo-disparalinea.png" 
                 alt="DISPARALINEA TRADING LDA" 
-                className="h-14 w-auto object-contain"
+                className="h-12 w-auto object-contain"
               />
             </div>
           </Link>
 
           {/* Navigation - Desktop */}
-          <nav className="hidden lg:flex items-center gap-1 flex-1">
+          <nav className="hidden lg:flex items-center gap-0.5 flex-1">
             <Link href="/">
-              <Button variant="ghost" size="sm" className="text-sm">
+              <Button variant="ghost" size="sm" className="text-sm font-medium hover:bg-accent/80 transition-all">
                 {t.home}
               </Button>
             </Link>
             {categories.map((category) => (
               <Link key={category.path} href={category.path}>
-                <Button variant="ghost" size="sm" className="text-sm">
+                <Button variant="ghost" size="sm" className="text-sm font-medium hover:bg-accent/80 transition-all">
                   {category.name}
                 </Button>
               </Link>

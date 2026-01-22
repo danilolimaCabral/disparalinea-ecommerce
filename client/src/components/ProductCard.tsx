@@ -57,9 +57,9 @@ export function ProductCard({
   const t = translations[language];
 
   return (
-    <Card className="group glass-card glass-hover overflow-hidden border-0 transition-all duration-300">
+    <Card className="group overflow-hidden border border-border/50 hover:border-primary/50 hover:shadow-xl transition-all duration-300 bg-card/50 backdrop-blur-sm">
       <Link href={`/product/${slug}`}>
-        <div className="relative aspect-square overflow-hidden bg-muted">
+        <div className="relative aspect-square overflow-hidden bg-muted/30">
           {imageUrl ? (
             <img
               src={imageUrl}
@@ -90,32 +90,32 @@ export function ProductCard({
         </div>
       </Link>
 
-      <CardContent className="p-4">
+      <CardContent className="p-5">
         {brand && (
-          <p className="text-sm text-muted-foreground font-medium mb-1">
+          <p className="text-xs text-muted-foreground font-semibold uppercase tracking-wide mb-2">
             {brand}
           </p>
         )}
         <Link href={`/product/${slug}`}>
-          <h3 className="font-semibold text-base line-clamp-2 hover:text-primary transition-colors cursor-pointer">
+          <h3 className="font-semibold text-base line-clamp-2 hover:text-primary transition-colors cursor-pointer leading-snug">
             {name}
           </h3>
         </Link>
 
-        <div className="mt-3 space-y-1">
-          <div className="price-with-vat">
+        <div className="mt-4 space-y-0.5">
+          <div className="text-2xl font-bold text-primary">
             {parseFloat(priceInclVat).toFixed(2)} €
           </div>
-          <div className="price-excl-vat">
+          <div className="text-xs text-muted-foreground">
             {t.inclVat}
           </div>
-          <div className="price-excl-vat">
+          <div className="text-xs text-muted-foreground">
             {parseFloat(priceExclVat).toFixed(2)} € {t.exclVat}
           </div>
         </div>
       </CardContent>
 
-      <CardFooter className="p-4 pt-0 flex gap-2">
+      <CardFooter className="p-5 pt-0 flex gap-2">
         <Link href={`/product/${slug}`} className="flex-1">
           <Button variant="outline" className="w-full" size="sm">
             {t.viewDetails}
