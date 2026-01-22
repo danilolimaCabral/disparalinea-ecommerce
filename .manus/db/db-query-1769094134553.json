@@ -1,0 +1,38 @@
+{
+  "query": "SELECT c.nameEn as category, COUNT(p.id) as count FROM products p JOIN categories c ON p.categoryId = c.id GROUP BY c.nameEn ORDER BY c.nameEn;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user gjuqDE6BkXEJ8aC.fbd2a1734466 --database VA6tZfdqK6JEcwJnq8qJwL --execute SELECT c.nameEn as category, COUNT(p.id) as count FROM products p JOIN categories c ON p.categoryId = c.id GROUP BY c.nameEn ORDER BY c.nameEn;",
+  "rows": [
+    {
+      "category": "Accessories",
+      "count": "2"
+    },
+    {
+      "category": "Fragrances",
+      "count": "13"
+    },
+    {
+      "category": "Laptops",
+      "count": "2"
+    },
+    {
+      "category": "Smartphones",
+      "count": "3"
+    },
+    {
+      "category": "Tablets",
+      "count": "2"
+    },
+    {
+      "category": "Tires",
+      "count": "12"
+    },
+    {
+      "category": "Wearables",
+      "count": "2"
+    }
+  ],
+  "messages": [],
+  "stdout": "category\tcount\nAccessories\t2\nFragrances\t13\nLaptops\t2\nSmartphones\t3\nTablets\t2\nTires\t12\nWearables\t2\n",
+  "stderr": "",
+  "execution_time_ms": 360
+}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { ShoppingCart, Search, Globe, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -57,6 +57,7 @@ export function Header({
 }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const [, setLocation] = useLocation();
   const t = translations[currentLanguage];
 
   const handleSearch = (e: React.FormEvent) => {
@@ -119,7 +120,12 @@ export function Header({
           {/* Actions - Right Side */}
           <div className="flex items-center gap-2 flex-shrink-0">
             {/* Search Icon */}
-            <Button variant="ghost" size="icon" className="hidden sm:flex h-9 w-9 rounded-full hover:bg-accent">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="hidden sm:flex h-9 w-9 rounded-full hover:bg-accent"
+              onClick={() => setLocation("/search")}
+            >
               <Search className="h-4 w-4" />
             </Button>
             {/* Language Selector */}

@@ -1,0 +1,8 @@
+{
+  "query": "SELECT category, COUNT(*) as count FROM products GROUP BY category ORDER BY category;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user gjuqDE6BkXEJ8aC.fbd2a1734466 --database VA6tZfdqK6JEcwJnq8qJwL --execute SELECT category, COUNT(*) as count FROM products GROUP BY category ORDER BY category;",
+  "returncode": 1,
+  "logs": [
+    "ERROR 1054 (42S22) at line 1: Unknown column 'category' in 'group statement'"
+  ]
+}
