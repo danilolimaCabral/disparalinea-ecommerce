@@ -75,57 +75,57 @@ export function Header({
   ];
 
   return (
-    <header className="bg-background border-b border-border sticky top-0 z-50 shadow-professional">
+    <header className="bg-background border-b border-border sticky top-0 z-50 shadow-sm">
       <div className="container">
-        {/* Main Header */}
-        <div className="flex items-center justify-between py-4 gap-4">
-        {/* Logo */}
-        <Link href="/">
-          <div className="flex items-center cursor-pointer">
-            <img 
-              src="/logo-disparalinea.png" 
-              alt="DISPARALINEA TRADING LDA" 
-              className="h-20 w-auto object-contain"
-            />
-          </div>
-        </Link>
+        {/* Main Header - Single Line */}
+        <div className="flex items-center justify-between py-5 gap-6">
+          {/* Logo */}
+          <Link href="/">
+            <div className="flex items-center cursor-pointer flex-shrink-0">
+              <img 
+                src="/logo-disparalinea.png" 
+                alt="DISPARALINEA TRADING LDA" 
+                className="h-16 w-auto object-contain"
+              />
+            </div>
+          </Link>
 
-        {/* Search Bar - Desktop */}
+          {/* Search Bar - Desktop */}
           <form
             onSubmit={handleSearch}
-            className="hidden md:flex flex-1 max-w-xl"
+            className="hidden md:flex flex-1 max-w-2xl"
           >
             <div className="relative w-full">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
                 type="search"
                 placeholder={t.search}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 pr-4"
+                className="pl-12 pr-4 h-11 text-base rounded-full border-2 focus:border-primary transition-colors"
               />
             </div>
           </form>
 
-          {/* Actions */}
-          <div className="flex items-center gap-2">
+          {/* Actions - Right Side */}
+          <div className="flex items-center gap-3 flex-shrink-0">
             {/* Language Selector */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="hidden sm:flex">
+                <Button variant="ghost" size="icon" className="hidden sm:flex h-10 w-10 rounded-full hover:bg-accent">
                   <Globe className="h-5 w-5" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
+              <DropdownMenuContent align="end" className="w-48">
                 <DropdownMenuItem
                   onClick={() => onLanguageChange?.("pt")}
-                  className={currentLanguage === "pt" ? "bg-accent" : ""}
+                  className={currentLanguage === "pt" ? "bg-accent font-semibold" : ""}
                 >
                   🇵🇹 Português
                 </DropdownMenuItem>
                 <DropdownMenuItem
                   onClick={() => onLanguageChange?.("en")}
-                  className={currentLanguage === "en" ? "bg-accent" : ""}
+                  className={currentLanguage === "en" ? "bg-accent font-semibold" : ""}
                 >
                   🇺🇸 English
                 </DropdownMenuItem>
@@ -134,9 +134,9 @@ export function Header({
 
             {/* Login Button */}
             <Button 
-              variant="ghost" 
-              size="sm"
-              className="hidden sm:flex"
+              variant="outline" 
+              size="default"
+              className="hidden sm:flex h-10 px-6 rounded-full font-semibold hover:bg-primary hover:text-primary-foreground transition-colors"
               onClick={() => window.location.href = '/api/oauth/login'}
             >
               {t.login}
@@ -144,12 +144,12 @@ export function Header({
 
             {/* Cart */}
             <Link href="/cart">
-              <Button variant="ghost" size="icon" className="relative">
+              <Button variant="ghost" size="icon" className="relative h-10 w-10 rounded-full hover:bg-accent">
                 <ShoppingCart className="h-5 w-5" />
                 {cartItemCount > 0 && (
                   <Badge
                     variant="destructive"
-                    className="absolute -top-1 -right-1 h-5 w-5 flex items-center justify-center p-0 text-xs"
+                    className="absolute -top-1 -right-1 h-6 w-6 flex items-center justify-center p-0 text-xs font-bold rounded-full"
                   >
                     {cartItemCount}
                   </Badge>
@@ -161,7 +161,7 @@ export function Header({
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden"
+              className="md:hidden h-10 w-10 rounded-full"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? (
