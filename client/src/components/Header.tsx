@@ -151,16 +151,6 @@ export function Header({
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* Login Button */}
-            <Button 
-              variant="outline" 
-              size="sm"
-              className="hidden sm:flex h-9 px-4 rounded-full text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
-              onClick={() => window.location.href = '/api/oauth/login'}
-            >
-              {t.login}
-            </Button>
-
             {/* Cart */}
             <Link href="/cart">
               <Button variant="ghost" size="icon" className="relative h-9 w-9 rounded-full hover:bg-accent">

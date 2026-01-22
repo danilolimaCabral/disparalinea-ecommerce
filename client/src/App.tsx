@@ -5,6 +5,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
+import { CartProvider, useCart } from "./contexts/CartContext";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { CurrencyTicker } from "./components/CurrencyTicker";
@@ -28,12 +29,9 @@ import { trpc } from "./lib/trpc";
 
 function AppContent() {
   const { language, setLanguage } = useLanguage();
-  const { data: cartItems } = trpc.cart.list.useQuery(undefined, {
-    retry: false,
-    refetchOnWindowFocus: false,
-  });
+  const { totalItems } = useCart();
 
-  const cartItemCount = cartItems?.length || 0;
+  const cartItemCount = totalItems;
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -75,10 +73,12 @@ function App() {
     <ErrorBoundary>
       <ThemeProvider defaultTheme="light">
         <LanguageProvider>
-          <TooltipProvider>
-            <Toaster />
-            <AppContent />
-          </TooltipProvider>
+          <CartProvider>
+            <TooltipProvider>
+              <Toaster />
+              <AppContent />
+            </TooltipProvider>
+          </CartProvider>
         </LanguageProvider>
       </ThemeProvider>
     </ErrorBoundary>

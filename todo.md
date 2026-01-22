@@ -434,3 +434,15 @@
 - [x] Copiar imagens para diretório público do projeto (36 produtos + 1 hero)
 - [x] Atualizar banco de dados com caminhos das novas imagens (36 produtos)
 - [x] Testar carregamento das imagens no site (TODAS funcionando perfeitamente!)
+
+
+## 🔓 Remoção de Autenticação Obrigatória
+
+- [x] Remover redirecionamento automático para login do Manus OAuth
+- [x] Tornar todas as páginas públicas (Home, Categorias, Produtos, Busca)
+- [x] Ajustar Header para não exigir autenticação (botão de login removido)
+- [x] Modificar carrinho para funcionar sem login (localStorage com CartContext)
+- [x] Ajustar checkout para aceitar compras de visitantes (guest checkout via localStorage)
+- [x] Remover verificações de `ctx.user` nas procedures públicas (não necessário - site já público)
+- [x] Testar navegação completa sem login (FUNCIONANDO - sem botão de login)
+- [x] Carrinho funcionando com localStorage via CartContext
