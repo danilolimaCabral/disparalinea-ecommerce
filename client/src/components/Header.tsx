@@ -79,22 +79,18 @@ export function Header({
       <div className="container">
         {/* Main Header */}
         <div className="flex items-center justify-between py-4 gap-4">
-          {/* Logo */}
-          <Link href="/">
-            <div className="flex items-center gap-3 cursor-pointer">
-              <div className="w-12 h-12 rounded-full gold-gradient flex items-center justify-center shadow-lg">
-                <span className="text-primary font-bold text-xl">DT</span>
-              </div>
-              <div className="hidden md:block">
-                <h1 className="text-xl font-bold text-primary leading-tight">
-                  DisparaLinea
-                </h1>
-                <p className="text-xs text-muted-foreground">Trading LDA</p>
-              </div>
-            </div>
-          </Link>
+        {/* Logo */}
+        <Link href="/">
+          <div className="flex items-center cursor-pointer">
+            <img 
+              src="/logo-disparalinea.png" 
+              alt="DISPARALINEA TRADING LDA" 
+              className="h-16 w-auto object-contain"
+            />
+          </div>
+        </Link>
 
-          {/* Search Bar - Desktop */}
+        {/* Search Bar - Desktop */}
           <form
             onSubmit={handleSearch}
             className="hidden md:flex flex-1 max-w-xl"
@@ -135,6 +131,16 @@ export function Header({
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
+
+            {/* Login Button */}
+            <Button 
+              variant="ghost" 
+              size="sm"
+              className="hidden sm:flex"
+              onClick={() => window.location.href = '/api/oauth/login'}
+            >
+              {t.login}
+            </Button>
 
             {/* Cart */}
             <Link href="/cart">

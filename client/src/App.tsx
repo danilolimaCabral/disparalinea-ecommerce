@@ -8,6 +8,7 @@ import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { CurrencyTicker } from "./components/CurrencyTicker";
+import { CookieBanner } from "./components/CookieBanner";
 import Home from "./pages/Home";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
@@ -44,6 +45,7 @@ function AppContent() {
         </Switch>
       </main>
       <Footer language={language} />
+      <CookieBanner language={language} />
     </div>
   );
 }

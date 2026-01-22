@@ -101,3 +101,27 @@
 - [x] Criar webhook do Stripe para processar pagamentos
 - [x] Implementar página de confirmação do pedido
 - [x] Limpar carrinho após pagamento bem-sucedido[ ] Adicionar sistema de pedidos no banco de dados
+
+## Ajustes para Igualar ao Site de Referência
+- [x] Copiar imagem do smartphone do hero section
+- [x] Copiar logos das marcas (Apple, Samsung, Google, Xiaomi, OnePlus)
+- [x] Ajustar logo do header para texto completo "DISPARALINEA TRADING LDA"
+- [x] Adicionar botão "Entrar" no header
+- [x] Adicionar imagem de produto no lado direito do hero
+- [x] Criar seção "Trusted Brands" com logos das marcas
+- [x] Adicionar ícone de estrela amarela antes do título "Featured"
+- [x] Ajustar estrutura do footer com todas as seções
+- [x] Adicionar cookie banner com botões Customize, Reject All, Accept All
+- [x] Verificar formato exato dos preços (VAT included/excl. VAT)
+
+## Modernização do Layout (Mantendo Tema)
+- [ ] Aplicar glassmorphism nos cards e componentes
+- [ ] Adicionar animações suaves (fade-in, slide-up, hover effects)
+- [ ] Implementar gradientes modernos no hero section
+- [ ] Melhorar sombras e profundidade visual
+- [ ] Aumentar espaçamentos para layout mais respirável
+- [ ] Adicionar efeitos de parallax no hero
+- [ ] Implementar scroll reveal animations
+- [ ] Melhorar hover states em todos os elementos interativos
+- [ ] Adicionar micro-interações nos botões e cards
+- [ ] Otimizar tipografia com hierarquia clara

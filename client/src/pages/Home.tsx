@@ -167,29 +167,38 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="bg-primary text-primary-foreground py-20 lg:py-32">
+      <section className="bg-primary text-primary-foreground py-20 lg:py-32 relative overflow-hidden">
         <div className="container">
-          <div className="max-w-3xl">
-            <div className="inline-block bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-semibold mb-6">
-              {t.hero.badge}
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-3xl">
+              <div className="inline-block bg-accent text-accent-foreground px-4 py-1 rounded-full text-sm font-semibold mb-6">
+                {t.hero.badge}
+              </div>
+              <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+                {t.hero.title}
+              </h1>
+              <p className="text-lg lg:text-xl opacity-90 mb-8">
+                {t.hero.subtitle}
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/products">
+                  <Button size="lg" variant="secondary">
+                    {t.hero.cta}
+                  </Button>
+                </Link>
+                <Link href="/about">
+                  <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+                    {t.hero.about}
+                  </Button>
+                </Link>
+              </div>
             </div>
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
-              {t.hero.title}
-            </h1>
-            <p className="text-lg lg:text-xl opacity-90 mb-8">
-              {t.hero.subtitle}
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link href="/products">
-                <Button size="lg" variant="secondary">
-                  {t.hero.cta}
-                </Button>
-              </Link>
-              <Link href="/about">
-                <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
-                  {t.hero.about}
-                </Button>
-              </Link>
+            <div className="hidden lg:flex justify-center items-center">
+              <img 
+                src="/hero-phone.png" 
+                alt="Premium Smartphone" 
+                className="w-full max-w-md h-auto object-contain drop-shadow-2xl"
+              />
             </div>
           </div>
         </div>
@@ -200,12 +209,22 @@ export default function Home() {
         <div className="container text-center">
           <h2 className="text-3xl font-bold mb-4">{t.brands.title}</h2>
           <p className="text-muted-foreground mb-12">{t.brands.subtitle}</p>
-          <div className="flex flex-wrap justify-center items-center gap-12">
-            {brands.map((brand) => (
-              <div key={brand} className="text-2xl font-bold text-muted-foreground hover:text-primary transition-colors">
-                {brand}
-              </div>
-            ))}
+          <div className="flex flex-wrap justify-center items-center gap-16">
+            <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/brand-apple.png" alt="Apple" className="h-12 w-auto object-contain" />
+            </div>
+            <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/brand-samsung.png" alt="Samsung" className="h-12 w-auto object-contain" />
+            </div>
+            <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/brand-google.webp" alt="Google" className="h-12 w-auto object-contain" />
+            </div>
+            <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/brand-xiaomi.jpg" alt="Xiaomi" className="h-12 w-auto object-contain" />
+            </div>
+            <div className="grayscale hover:grayscale-0 transition-all duration-300 opacity-60 hover:opacity-100">
+              <img src="/brand-oneplus.png" alt="OnePlus" className="h-12 w-auto object-contain" />
+            </div>
           </div>
         </div>
       </section>
@@ -238,8 +257,11 @@ export default function Home() {
         <div className="container">
           <div className="flex justify-between items-center mb-12">
             <div>
-              <h2 className="text-3xl font-bold mb-2">{t.featured.title}</h2>
-              <p className="text-muted-foreground">{t.featured.subtitle}</p>
+              <div className="flex items-center gap-2">
+                <Star className="h-8 w-8 text-yellow-500 fill-yellow-500" />
+                <h2 className="text-3xl font-bold">{t.featured.title}</h2>
+              </div>
+              <p className="text-muted-foreground mt-2">{t.featured.subtitle}</p>
             </div>
             <Link href="/products">
               <Button variant="outline">{t.featured.viewAll}</Button>
