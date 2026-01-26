@@ -464,5 +464,5 @@
 - [ ] Testar ícone de idioma (PT/EN)
 - [x] Testar ícone do carrinho (PROBLEMA: usava tRPC)
 - [x] Corrigir Cart.tsx para usar CartContext com localStorage
-- [ ] Exportar código para GitHub
+- [x] Exportar código para GitHub (danilolimaCabral/disparalinea-ecommerce)
 - [ ] Criar checkpoint final
