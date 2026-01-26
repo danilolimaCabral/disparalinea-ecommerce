@@ -446,3 +446,23 @@
 - [x] Remover verificações de `ctx.user` nas procedures públicas (não necessário - site já público)
 - [x] Testar navegação completa sem login (FUNCIONANDO - sem botão de login)
 - [x] Carrinho funcionando com localStorage via CartContext
+
+
+## 🧪 Teste de Todos os Menus e Export para GitHub
+
+- [ ] Testar menu Início (Home)
+- [ ] Testar menu Smartphones
+- [ ] Testar menu Tablets
+- [ ] Testar menu Wearables
+- [ ] Testar menu Acessórios
+- [ ] Testar menu Laptops
+- [ ] Testar menu Pneus
+- [ ] Testar menu Fragrâncias
+- [ ] Testar menu Sobre Nós
+- [ ] Testar menu Contacto
+- [ ] Testar ícone de busca
+- [ ] Testar ícone de idioma (PT/EN)
+- [x] Testar ícone do carrinho (PROBLEMA: usava tRPC)
+- [x] Corrigir Cart.tsx para usar CartContext com localStorage
+- [ ] Exportar código para GitHub
+- [ ] Criar checkpoint final
