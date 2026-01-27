@@ -474,3 +474,31 @@
 - [x] Adicionar rota /about no App.tsx
 - [x] Ajustar CSS das imagens dos cards (object-fit: contain + padding)
 - [x] Testar todas as páginas após correções (About OK, imagens OK - object-contain funcionando)
+
+
+## 🎨 Regeneração de Todas as Imagens com Nano Banana
+
+- [x] Regenerar imagens de Smartphones (3 produtos)
+- [x] Regenerar imagens de Tablets (2 produtos)
+- [x] Regenerar imagens de Wearables (2 produtos)
+- [x] Regenerar imagens de Acessórios (2 produtos)
+- [x] Regenerar imagens de Laptops (2 produtos)
+- [ ] Regenerar imagens de Pneus (12 produtos)
+- [ ] Regenerar imagens de Fragrâncias (13 produtos)
+- [ ] Copiar novas imagens para diretório público
+- [ ] Atualizar banco de dados com novos caminhos
+- [ ] Testar carregamento no site
+
+## Regeneração de Imagens com Nano Banana AI
+- [x] Regenerar todas as 36 imagens de produtos usando nano banana AI
+- [x] Smartphones: Samsung S24 Ultra, iPhone 15 Pro Max, Google Pixel 8 Pro
+- [x] Tablets: iPad Pro 11", Samsung Tab S9 Ultra
+- [x] Wearables: Apple Watch Series 9, Samsung Galaxy Watch 6 Classic
+- [x] Accessories: AirPods Pro 2, Galaxy Buds2 Pro
+- [x] Laptops: MacBook Pro 14" M3, Dell XPS 15
+- [x] Tires: Todos os 12 pneus (Michelin, Bridgestone, Goodyear, Continental, Pirelli, Toyo, Falken, Hankook, Yokohama, Dunlop)
+- [x] Fragrances: Todas as 13 fragrâncias (Dior, Chanel, Versace, Paco Rabanne, Hugo Boss, Armani, Tom Ford, YSL, Gucci, JPG, Carolina Herrera, D&G, Burberry)
+- [x] Copiar todas as imagens para /client/public/products/
+- [x] Atualizar banco de dados com novos caminhos de imagens
+- [x] Validar carregamento das imagens no site
+- [x] Confirmar qualidade fotorealística e enquadramento perfeito
