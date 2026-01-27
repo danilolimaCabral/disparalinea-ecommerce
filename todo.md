@@ -502,3 +502,14 @@
 - [x] Atualizar banco de dados com novos caminhos de imagens
 - [x] Validar carregamento das imagens no site
 - [x] Confirmar qualidade fotorealística e enquadramento perfeito
+
+## Deploy no Railway
+- [x] Verificar configurações do railway.json
+- [x] Otimizar build commands para Railway
+- [x] Criar guia simplificado de deploy
+- [ ] Fazer push das otimizações para GitHub
+- [ ] Configurar projeto no Railway
+- [ ] Adicionar banco de dados MySQL
+- [ ] Configurar variáveis de ambiente
+- [ ] Executar migração do banco de dados
+- [ ] Testar site em produção
