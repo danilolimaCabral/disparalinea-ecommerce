@@ -513,3 +513,10 @@
 - [ ] Configurar variáveis de ambiente
 - [ ] Executar migração do banco de dados
 - [ ] Testar site em produção
+
+## Correção da Página About Us
+- [x] Preencher seção "Who We Are" com conteúdo real
+- [x] Preencher seção "Our Mission" com missão da empresa
+- [x] Preencher cards de "Our Values" com valores reais
+- [x] Adicionar ícones apropriados para cada valor
+- [x] Testar página About Us no navegador
