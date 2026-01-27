@@ -23,6 +23,7 @@ import WearablesCategory from "./pages/WearablesCategory";
 import AccessoriesCategory from "./pages/AccessoriesCategory";
 import LaptopsCategory from "./pages/LaptopsCategory";
 import AboutUs from "./pages/AboutUs";
+import About from "./pages/About";
 import Contact from "./pages/Contact";
 import SearchPage from "./pages/SearchPage";
 import { trpc } from "./lib/trpc";
@@ -56,6 +57,7 @@ function AppContent() {
           <Route path="/tires" component={TiresCategory} />
           <Route path="/fragrances" component={FragrancesCategory} />
           <Route path="/about-us" component={AboutUs} />
+          <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route path="/search" component={SearchPage} />
           <Route path={"/404"} component={NotFound} />

@@ -466,3 +466,11 @@
 - [x] Corrigir Cart.tsx para usar CartContext com localStorage
 - [x] Exportar código para GitHub (danilolimaCabral/disparalinea-ecommerce)
 - [ ] Criar checkpoint final
+
+
+## 🐛 Correções Urgentes
+
+- [x] Criar página About (erro 404)
+- [x] Adicionar rota /about no App.tsx
+- [x] Ajustar CSS das imagens dos cards (object-fit: contain + padding)
+- [x] Testar todas as páginas após correções (About OK, imagens OK - object-contain funcionando)
